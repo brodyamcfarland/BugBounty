@@ -24,13 +24,15 @@ const Header = () => {
             </button>
             <input className='border-l pl-1 rounded-tr-md rounded-br-md' placeholder="Search..."/>
           </div>
-          <Link to='/login' className='opacity-70 hover:opacity-100 duration-300 rounded-md text-sm text-white p-1 px-2 bg-[#5c5b5a] shadow-lg hover:shadow-none'>Log In</Link>
-          <Link to='/signup' className='opacity-70 hover:opacity-100 duration-300 rounded-md text-sm text-white p-1 px-2 bg-[#bb6561] shadow-lg hover:shadow-none'>Sign Up</Link>
+          <Link to='/login' className='opacity-50 hover:opacity-100 duration-300 rounded-md text-sm text-white p-1 px-2 bg-[#5c5b5a] shadow-lg hover:shadow-none'>Log In</Link>
+          <Link to='/signup' className='opacity-50 hover:opacity-100 duration-300 rounded-md text-sm text-white p-1 px-2 bg-orange-600 shadow-lg hover:shadow-none'>Sign Up</Link>
         </div>
       </div>
       {openSidebar && (
-        <div className='z-50 rounded-md absolute top-10 left-[12%] w-[15rem] h-[20rem] shadow-lg bg-[#ff832a33] backdrop-blur-md'>
-          <Sidebar/>
+        <div onClick={() => setOpenSidebar(false)} className='absolute h-full w-full z-[51]'>
+          <div className='z-50 rounded-md absolute top-10 left-[12%] w-[15rem] h-[20rem] shadow-lg bg-[#ff832a33] backdrop-blur-md'>
+            <Sidebar/>
+          </div>
         </div>
       )}
     </>
