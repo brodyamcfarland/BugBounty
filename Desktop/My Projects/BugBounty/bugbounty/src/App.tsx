@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import LogIn from './pages/LogIn';
+import Logout from './pages/Logout';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import OpenBounties from './pages/OpenBounties';
@@ -21,6 +22,7 @@ const App = () => {
               <Route path='/' element={<Home />} />
               <Route path='/about' element={<About />} />
               <Route path='/login' element={<LogIn />} />
+              <Route path='/logout' element={<Logout />} />
               <Route path='/signup' element={<SignUp />} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/bounties' element={<OpenBounties />} />
