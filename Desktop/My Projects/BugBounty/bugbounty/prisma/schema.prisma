@@ -14,9 +14,22 @@ model Post {
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
   content   String?
-  published Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
+  tags      String[]
+  views     Int
+  isOpen    Boolean  @default(true)
+  price     Float?
+}
+
+model Comments {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  content   String?
+  author    User     @relation(fields: [commentId], references: [id])
+  commentId Int
+  accepted  Boolean  @default(false)
+
 }
 
 model Profile {
@@ -32,6 +45,9 @@ model User {
   username    String?
   posts       Post[]
   profile     Profile?
+  comments    Comments[]
+  bio         String?
+  points      Int?     @default(0)
 }
 
 enum Role {
